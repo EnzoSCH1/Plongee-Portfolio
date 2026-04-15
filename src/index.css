@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 205 100% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 205 80% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 205 80% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 199 100% 50%;
+    --primary-foreground: 205 100% 8%;
+
+    --secondary: 205 60% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 205 50% 15%;
+    --muted-foreground: 200 30% 70%;
+
+    --accent: 180 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 205 40% 25%;
+    --input: 205 40% 25%;
+    --ring: 199 100% 50%;
+
+    --radius: 0.5rem;
+
+    --ocean-surface: 199 85% 55%;
+    --ocean-mid: 210 90% 35%;
+    --ocean-deep: 215 95% 15%;
+    --ocean-abyss: 220 100% 6%;
+    --coral-pink: 340 60% 55%;
+    --coral-purple: 280 50% 40%;
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Light rays animation */
+@keyframes lightRay {
+  0% { opacity: 0.03; transform: translateX(-50%) rotate(var(--ray-angle)) scaleY(1); }
+  50% { opacity: 0.08; transform: translateX(-50%) rotate(var(--ray-angle)) scaleY(1.1); }
+  100% { opacity: 0.03; transform: translateX(-50%) rotate(var(--ray-angle)) scaleY(1); }
+}
+
+.light-ray {
+  position: absolute;
+  top: -20%;
+  width: 2px;
+  height: 140%;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0.15) 0%,
+    hsla(0, 0%, 100%, 0.05) 40%,
+    transparent 100%
+  );
+  transform-origin: top center;
+  animation: lightRay var(--ray-duration) ease-in-out infinite;
+  animation-delay: var(--ray-delay);
+  filter: blur(3px);
+}
+
+/* Floating fish animation */
+@keyframes floatFish {
+  0%, 100% { transform: translate(0, 0) rotate(var(--fish-rotate, 0deg)); }
+  25% { transform: translate(10px, -15px) rotate(calc(var(--fish-rotate, 0deg) + 3deg)); }
+  50% { transform: translate(-5px, -25px) rotate(calc(var(--fish-rotate, 0deg) - 2deg)); }
+  75% { transform: translate(15px, -10px) rotate(calc(var(--fish-rotate, 0deg) + 2deg)); }
+}
+
+.float-fish {
+  animation: floatFish var(--fish-duration, 8s) ease-in-out infinite;
+  animation-delay: var(--fish-delay, 0s);
+}
+
+/* Scroll text distortion effect */
+@keyframes underwaterDistort {
+  0%, 100% { filter: blur(0px) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='t'><feTurbulence baseFrequency='0.01' numOctaves='3' seed='1'/><feDisplacementMap in='SourceGraphic' scale='3'/></filter></svg>#t"); }
+  50% { filter: blur(0.5px); }
+}
+
+
+
+/* <-- ferme correctement le bloc @layer base */
+
+/* Ocean gradient sections */
+/* Base layer: spans the ENTIRE page and keeps darkening smoothly */
+.ocean-base-gradient {
+    background-color: hsl(210.46, 93.3%, 45.9%);
+    background-image: linear-gradient(
+      0deg,
+      hsl(210.46, 93.3%, 45.9%) 0%,
+      hsl(210.46, 93.3%, 45.9%) 100%
+    );
+  position: relative;
+}
+
+/* Overlay gradient for hero video transition */
+.hero-video-gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 180px;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(0deg, hsl(210.46, 93.3%, 40.9%) 15%, transparent 50%);
+}
+
+/* Foreground overlay: only brightens the upper part, then fades away smoothly */
+.ocean-foreground-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    180deg,
+    hsl(210.46, 93.3%, 43.8%) 0%,
+    hsl(210.46, 93.3%, 43.8%) 10%,
+    hsl(209, 80%, 36%) 20%,
+    hsl(215, 90%, 25%) 38%,
+    hsl(219, 98%, 18%) 56%,
+    hsl(223, 97%, 18%) 70%,
+    transparent 82%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.ocean-gradient-mid {
+  background: transparent;
+}
+
+.ocean-gradient-deep {
+  background: transparent;
+}
+
+
+.ocean-gradient-abyss {
+  background: linear-gradient(180deg,
+    hsl(223 97% 18%) 0%,
+    hsl(223 97% 14%) 30%,
+    hsl(223 97% 12%) 60%,
+    hsl(223 97% 10%) 100%
+  );
+  position: relative;
+}
+
+
+.ocean-gradient-abyss::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    hsl(223 97% 10% / 0.15) 60%,
+    hsl(223 97% 10% / 0.25) 80%,
+    hsl(223 97% 10% / 0.35) 100%
+  );
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Bubble particles */
+@keyframes bubbleRise {
+  0% { transform: translateY(100%) scale(0.5); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+}
+
+.bubble {
+  position: absolute;
+  width: var(--bubble-size, 4px);
+  height: var(--bubble-size, 4px);
+  border-radius: 50%;
+  background: hsla(0, 0%, 100%, 0.2);
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  animation: bubbleRise var(--bubble-duration, 12s) linear infinite;
+  animation-delay: var(--bubble-delay, 0s);
+}
+
+/* Wavy text for hero title */
+.wavy-text {
+  font-family: var(--font-display);
+  letter-spacing: 0.15em;
+  text-transform: lowercase;
+}
