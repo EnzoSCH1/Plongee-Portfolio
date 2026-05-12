@@ -74,7 +74,7 @@ const Index = () => {
       </div>
 
       {/* === DEEP ZONE === */}
-      <div className="relative ocean-gradient-deep overflow-hidden">
+      <div className="relative ocean-gradient-deep">
         <DecorationLayer variant="deep" />
         <Bubbles />
 
@@ -152,7 +152,7 @@ const Index = () => {
       </div>
 
       {/* === FOOTER - Hyundai & Healthy Seas (deepest) === */}
-      <div className="relative overflow-hidden">
+      <div className="relative">
         {/* Video background - no filters, no blend, pure original */}
         <video
           autoPlay
@@ -178,19 +178,28 @@ const Index = () => {
 
         <div className="relative z-10 py-32 md:py-48 px-6 text-center">
           <h2 className="font-display text-3xl md:text-5xl text-foreground mb-4 font-semibold">
-            Fin de la plongée - merci de votre visite
+            Hyundai & Healthy Seas
           </h2>
           <p className="font-body text-foreground/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-4">
-            partager ce carnet de plongée avec vos amis et votre famille pour sensibiliser à la beauté de l'océan et à l'importance de le protéger
+            Hyundai announced its partnership with Healthy Seas in 2021 as a way of fostering a more sustainable future.
+          </p>
+          <p className="font-body text-foreground/60 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            With Hyundai's commitment to developing emission-free mobility solutions, and Healthy Seas' expertise in protecting marine ecosystems, the two organisations hold a shared vision for shaping sustainable communities.
           </p>
         </div>
 
-        {/* Bottom coral reef overlaid on top */}
+        {/* Bottom — Hyundai foreground + footer coral par-dessus */}
         <div className="relative z-20">
           <img
-            src="/images/Reef-fish-2.webp"
-            alt="Coral reef"
+            src="/images/Hyundai-Footer-foreground_1.webp"
+            alt=""
             className="w-full object-cover object-top"
+          />
+          <img
+            src="/images/footer-coral.webp"
+            alt=""
+            className="absolute bottom-0 left-0 w-full object-cover object-bottom pointer-events-none"
+            style={{ filter: 'brightness(0.08)' }}
           />
         </div>
       </div>

@@ -6,7 +6,7 @@ Une expérience immersive de scroll inspirée par la BBC, mettant en avant la be
 Ce projet React + Vite propose une plongée interactive dans l’océan, avec transitions fluides, vidéos, overlays et animations pour sensibiliser à la pollution marine et à la préservation de l’environnement.
 
 - Vidéo de fond immersive (fond marin)
-- Transitions de couleurs BBC-like (pipette exacte)
+- Transitions de couleurs
 - Overlays et gradients pour un effet de profondeur
 - Animations de bulles, poissons, raies, tortues…
 - Sections à thème (surface, profondeur, abysses)

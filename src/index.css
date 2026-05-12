@@ -101,6 +101,57 @@
   animation-delay: var(--fish-delay, 0s);
 }
 
+/* Fillet swaying animation */
+@keyframes filletSway {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  30% { transform: translateY(-12px) rotate(1.5deg); }
+  60% { transform: translateY(-6px) rotate(-1deg); }
+  80% { transform: translateY(-18px) rotate(0.8deg); }
+}
+
+@keyframes filletSwayFlipped {
+  0%, 100% { transform: translateY(0px) rotate(180deg); }
+  30% { transform: translateY(-12px) rotate(181.5deg); }
+  60% { transform: translateY(-6px) rotate(179deg); }
+  80% { transform: translateY(-18px) rotate(180.8deg); }
+}
+
+.float-fillet {
+  animation: filletSway 7s ease-in-out infinite;
+}
+.float-fillet-delayed {
+  animation: filletSway 9s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.float-fillet-flipped {
+  animation: filletSwayFlipped 9s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes chainSway {
+  0%, 100% { transform: rotate(0deg); transform-origin: top center; }
+  25% { transform: rotate(4deg); transform-origin: top center; }
+  75% { transform: rotate(-4deg); transform-origin: top center; }
+}
+.float-chain { animation: chainSway 5s ease-in-out infinite; }
+.float-chain-delayed { animation: chainSway 7s ease-in-out infinite; animation-delay: 1.5s; }
+
+@keyframes torchPulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+.torch-pulse { animation: torchPulse 3s ease-in-out infinite; }
+
+@keyframes lightSway {
+  0%   { transform: scaleY(1) rotate(-1deg); }
+  50%  { transform: scaleY(1.05) rotate(1deg); }
+  100% { transform: scaleY(1) rotate(-1deg); }
+}
+.faisceau-lumineux {
+  animation: lightSway 8s ease-in-out infinite;
+  mix-blend-mode: overlay;
+}
+
 /* Scroll text distortion effect */
 @keyframes underwaterDistort {
   0%, 100% { filter: blur(0px) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='t'><feTurbulence baseFrequency='0.01' numOctaves='3' seed='1'/><feDisplacementMap in='SourceGraphic' scale='3'/></filter></svg>#t"); }
@@ -114,11 +165,11 @@
 /* Ocean gradient sections */
 /* Base layer: spans the ENTIRE page and keeps darkening smoothly */
 .ocean-base-gradient {
-    background-color: hsl(210.46, 93.3%, 45.9%);
+    background-color: hsl(210.46, 93.3%, 40.9%);
     background-image: linear-gradient(
-      0deg,
-      hsl(210.46, 93.3%, 45.9%) 0%,
-      hsl(210.46, 93.3%, 45.9%) 100%
+      180deg,
+      hsl(210.46, 93.3%, 40.9%) 0%,
+      hsl(210.46, 93.3%, 40.9%) 100%
     );
   position: relative;
 }
@@ -141,13 +192,13 @@
   inset: 0;
   background-image: linear-gradient(
     180deg,
-    hsl(210.46, 93.3%, 43.8%) 0%,
-    hsl(210.46, 93.3%, 43.8%) 10%,
-    hsl(209, 80%, 36%) 20%,
-    hsl(215, 90%, 25%) 38%,
-    hsl(219, 98%, 18%) 56%,
-    hsl(223, 97%, 18%) 70%,
-    transparent 82%
+    hsl(210.46, 93.3%, 40.9%) 0%,
+    hsl(210.46, 93.3%, 40.9%) 22%,
+    hsl(209, 80%, 36%) 30%,
+    hsl(215, 90%, 25%) 44%,
+    hsl(219, 98%, 18%) 58%,
+    hsl(223, 97%, 18%) 72%,
+    transparent 84%
   );
   pointer-events: none;
   z-index: 0;
@@ -165,7 +216,8 @@
 
 .ocean-gradient-abyss {
   background: linear-gradient(180deg,
-    hsl(223 97% 18%) 0%,
+    transparent 0%,
+    hsl(223 97% 18%) 8%,
     hsl(223 97% 14%) 30%,
     hsl(223 97% 12%) 60%,
     hsl(223 97% 10%) 100%

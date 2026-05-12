@@ -12,9 +12,9 @@ const HeroSection = () => {
   const titleOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
   const titleScale = useTransform(scrollYProgress, [0, 0.4], [1, 1.1]);
   const reefY = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const stingrayX = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const stingrayY = useTransform(scrollYProgress, [0, 1], [0, -40]);
-  const turtleX = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  const fish1X = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const fish2X = useTransform(scrollYProgress, [0, 1], [0, 50]);
+  const schoolY = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   return (
     <section ref={ref} className="relative h-[200vh]">
@@ -55,39 +55,39 @@ const HeroSection = () => {
           </p>
         </motion.div>
 
-        {/* Stingray - left */}
+        {/* Poisson milieu droit */}
         <motion.img
-          src="/images/StingRay.webp"
-          alt="Stingray"
-          style={{ x: stingrayX, y: stingrayY }}
-          className="absolute left-0 top-[15%] w-[200px] md:w-[320px] opacity-90 float-fish"
+          src="/images/fish-2.webp"
+          alt="Poisson"
+          className="absolute right-[10%] top-[60%] w-[35px] md:w-[52px] float-fish opacity-85"
+          style={{ '--fish-duration': '9s', '--fish-delay': '0.5s' } as any}
           loading="lazy"
         />
 
-        {/* Turtle - right */}
+        {/* Poisson centre */}
         <motion.img
-          src="/images/turtle.webp"
-          alt="Turtle"
-          style={{ x: turtleX }}
-          className="absolute right-[5%] top-[55%] w-[120px] md:w-[180px] opacity-80 float-fish"
+          src="/images/fish-4.webp"
+          alt="Poisson"
+          className="absolute left-1/2 -translate-x-1/2 top-[70%] w-[30px] md:w-[45px] float-fish"
+          style={{ '--fish-duration': '8s', '--fish-delay': '1.5s' } as any}
           loading="lazy"
         />
 
-        {/* Fish - left */}
+        {/* Banc de poissons bas gauche - parallax doux */}
         <motion.img
-          src="/images/left-fish-1.webp"
-          alt="Fish"
-          className="absolute left-[5%] top-[45%] w-[50px] md:w-[70px] float-fish"
-          style={{ '--fish-duration': '6s', '--fish-delay': '1s' } as any}
+          src="/images/school-1-left.webp"
+          alt="Banc de poissons"
+          style={{ y: schoolY }}
+          className="absolute left-[12%] top-[68%] w-[80px] md:w-[130px] opacity-70 float-fish"
           loading="lazy"
         />
 
-        {/* Fish - right */}
+        {/* Poisson fond droite */}
         <motion.img
           src="/images/left-fish-3.webp"
-          alt="Fish"
-          className="absolute right-[15%] top-[35%] w-[45px] md:w-[65px] float-fish"
-          style={{ '--fish-duration': '7s', '--fish-delay': '2s' } as any}
+          alt="Poisson"
+          className="absolute right-[25%] top-[72%] w-[38px] md:w-[55px] float-fish"
+          style={{ '--fish-duration': '7s', '--fish-delay': '3s' } as any}
           loading="lazy"
         />
 
@@ -102,15 +102,6 @@ const HeroSection = () => {
             className="w-full object-cover object-top"
           />
         </motion.div>
-
-        {/* School of fish */}
-        <motion.img
-          src="/images/school01.webp"
-          alt="School of fish"
-          className="absolute left-[10%] top-[70%] w-[80px] md:w-[120px] float-fish opacity-70"
-          style={{ '--fish-duration': '10s', '--fish-delay': '3s' } as any}
-          loading="lazy"
-        />
       </div>
     </section>
   );
