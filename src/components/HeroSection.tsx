@@ -11,7 +11,7 @@ const HeroSection = () => {
 
   const titleOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
   const titleScale = useTransform(scrollYProgress, [0, 0.4], [1, 1.1]);
-  const reefY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const reefY = useTransform(scrollYProgress, [0, 0.6], [0, 40]);
   const fish1X = useTransform(scrollYProgress, [0, 1], [0, -60]);
   const fish2X = useTransform(scrollYProgress, [0, 1], [0, 50]);
   const schoolY = useTransform(scrollYProgress, [0, 1], [0, -40]);
@@ -42,7 +42,7 @@ const HeroSection = () => {
           className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4"
         >
           <h1 className="wavy-text text-5xl md:text-7xl lg:text-8xl font-light text-foreground mb-4 tracking-widest">
-           carnet de plongée
+           Carnet de plongée
           </h1>
           <h2 className="font-display text-2xl md:text-4xl lg:text-5xl text-foreground font-light text-center max-w-3xl">
             Enzo SCHNEIDER
@@ -59,7 +59,7 @@ const HeroSection = () => {
         <motion.img
           src="/images/fish-2.webp"
           alt="Poisson"
-          className="absolute right-[10%] top-[60%] w-[35px] md:w-[52px] float-fish opacity-85"
+          className="absolute right-[10%] top-[79%] w-[35px] md:w-[52px] float-fish opacity-85"
           style={{ '--fish-duration': '9s', '--fish-delay': '0.5s' } as any}
           loading="lazy"
         />
@@ -68,7 +68,7 @@ const HeroSection = () => {
         <motion.img
           src="/images/fish-4.webp"
           alt="Poisson"
-          className="absolute left-1/2 -translate-x-1/2 top-[70%] w-[30px] md:w-[45px] float-fish"
+          className="absolute left-1/2 -translate-x-1/2 top-[78%] w-[30px] md:w-[45px] float-fish"
           style={{ '--fish-duration': '8s', '--fish-delay': '1.5s' } as any}
           loading="lazy"
         />
@@ -78,7 +78,7 @@ const HeroSection = () => {
           src="/images/school-1-left.webp"
           alt="Banc de poissons"
           style={{ y: schoolY }}
-          className="absolute left-[12%] top-[68%] w-[80px] md:w-[130px] opacity-70 float-fish"
+          className="absolute left-[12%] top-[71%] w-[80px] md:w-[130px] opacity-70 float-fish"
           loading="lazy"
         />
 
@@ -86,7 +86,7 @@ const HeroSection = () => {
         <motion.img
           src="/images/left-fish-3.webp"
           alt="Poisson"
-          className="absolute right-[25%] top-[72%] w-[38px] md:w-[55px] float-fish"
+          className="absolute right-[25%] top-[74%] w-[38px] md:w-[55px] float-fish"
           style={{ '--fish-duration': '7s', '--fish-delay': '3s' } as any}
           loading="lazy"
         />
@@ -94,12 +94,12 @@ const HeroSection = () => {
         {/* Coral reef at bottom */}
         <motion.div
           style={{ y: reefY }}
-          className="absolute bottom-0 left-0 right-0 z-20"
+          className="absolute bottom-0 left-0 right-0 z-20 flex justify-center"
         >
           <img
             src="/images/Reef-fish-2.webp"
             alt="Coral reef"
-            className="w-full object-cover object-top"
+            className="w-[75%] object-cover object-top"
           />
         </motion.div>
       </div>

@@ -15,32 +15,46 @@ const Index = () => {
       {/* Hero - surface level */}
       <HeroSection />
 
+      {/* Vidéo collée sous le hero — le corail du header coule derrière */}
+      <div className="relative z-10 w-full flex justify-center px-6 pb-4">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full max-w-100xl object-contain block rounded-sm"
+          style={{ maxHeight: '625px' }}
+        >
+          <source src="/videos/video_fond_marin.webm" type="video/webm" />
+        </video>
+      </div>
+
       {/* === SURFACE ZONE === */}
       <div className="relative overflow-hidden">
         <DecorationLayer variant="surface" />
         <Bubbles />
 
         <ScrollRevealText className="text-xl md:text-3xl lg:text-4xl text-foreground/90 italic">
-          The ocean is increasingly filling with plastic waste.
+          Chaque plongée est un rappel : l'océan est vivant, fragile, et il a besoin de nous.
         </ScrollRevealText>
 
         <div className="max-w-3xl mx-auto px-6 py-8">
           <h3 className="font-display text-lg md:text-xl text-foreground/80 italic text-center leading-relaxed">
-            The Healthy Seas foundation, in co-operation with major partners like Hyundai Motor Company, is on a mission to clean up "ghost gear" while raising awareness about protecting the ocean environment.
+            Plongeur niveau 2 FFESSM, j'ai eu la chance d'explorer des fonds marins d'une beauté rare. Mais à chaque descente, le constat est là : les déchets ont envahi même les endroits les plus reculés de l'océan.
           </h3>
         </div>
 
         <QuoteSection
           gradientClass=""
           quotes={[
-            { text: "When we arrived, we saw big white rocks along the shoreline" },
-            { text: "But drawing closer, we realised they were styrofoam blocks." },
-            { text: "When we stepped on them, we began to sink into waste up to our knees." },
-            { text: "It smelled toxic – so toxic that butterflies were drawn to it because it smelled so sweet." },
+            { text: "Sous l'eau, le silence est total. Puis tu aperçois un filet qui dérive, lentement, comme un fantôme." },
+            { text: "Il n'attrape plus rien d'utile, mais il emprisonne tout ce qui passe." },
+            { text: "Des poissons, des tortues, des méduses — pris au piège d'un filet que personne ne récupèrera jamais." },
+            { text: "C'est là que j'ai compris pourquoi il fallait en parler. Pas seulement le vivre, mais le montrer." },
             {
-              text: "Ants had started to build their nests in the waste. It was a big mess.",
-              author: "Veronika Mikos",
-              title: "founder and director, Healthy Seas",
+              text: "La mer ne peut pas parler. C'est à nous de le faire à sa place.",
+              author: "Enzo Schneider",
+              title: "plongeur niveau 2 FFESSM",
             },
           ]}
         />
@@ -53,11 +67,11 @@ const Index = () => {
 
         <ArticleSection
           gradientClass=""
-          title="Collaboration"
-          subtitle="Arriving on the island of Ithaca, Greece, Mikos hadn't been prepared for the sheer scale of the challenge Healthy Seas faced. A beach strewn with discarded litter, old fishing nets, and rubbish that had floated ashore – a gargantuan task to clean up."
+          title="Ce que l'on voit sous l'eau"
+          subtitle="Quand on plonge régulièrement, on finit par développer un regard différent. On voit l'eau non plus comme un décor, mais comme un milieu vivant, complexe, et menacé."
           paragraphs={[
-            'And under the ocean\'s surface lie "ghost farms", where fish farming debris, like nets, buckets, lines and traps, are left in the sea along kilometres and kilometres of coastlines.',
-            'Locals reached out to Healthy Seas; a foundation committed to cleaning up marine pollution as well as raising awareness on ocean health. In 2021, Mikos and a crack team from Healthy Seas teamed up with Hyundai to co-ordinate the big Ithaca clean-up, repurposing waste fishing nets from the sea to produce material for Hyundai floor mats.',
+            'Lors de mes plongées, j\'ai pu observer des récifs coralliens d\'une grande diversité — mais aussi des zones entières où les filets abandonnés étouffent la vie. Ces engins fantômes dérivent en silence, invisibles depuis la surface, dévastateurs en dessous.',
+            'Passer son niveau 2 FFESSM, c\'est apprendre à évoluer en autonomie, à gérer sa flottabilité, à observer sans perturber. C\'est aussi réaliser que chaque plongeur a une responsabilité : celle de témoigner de ce qu\'il voit, et d\'agir.',
           ]}
         />
 
@@ -65,9 +79,9 @@ const Index = () => {
           gradientClass=""
           quotes={[
             {
-              text: "Ghost farms are significantly worse than floating nets because of the sheer size",
-              author: "Veronika Mikos",
-              title: "founder and director, Healthy Seas",
+              text: "Un récif en bonne santé, c'est des centaines d'espèces. Un récif étouffé sous les filets, c'est le silence.",
+              author: "Enzo Schneider",
+              title: "plongeur niveau 2 FFESSM",
             },
           ]}
         />
@@ -80,25 +94,25 @@ const Index = () => {
 
         <ArticleSection
           gradientClass=""
-          title="The scale of ocean garbage"
-          subtitle='"We have just one ocean, a continuous amount of water, and that ocean is filled with [up to an estimated] 11 million tonnes of waste"'
+          title="Ce que les chiffres cachent"
+          subtitle={`On parle de millions de tonnes de déchets dans les océans. Mais derrière ces chiffres, il y a des endroits précis — des spots de plongée que j'ai fréquentés — où la réalité est visible à l'œil nu.`}
           paragraphs={[
-            'Much of this waste drifts with the current, releasing chemicals, or traps fish in its flotsam. One such culprit is ghost nets: nets discarded by the fishing industry that continue to scoop up fish, dolphins, jellyfish, and sharks long after they\'ve served their initial purpose.',
-            'These discarded nets continue to do their work and are often undetectable by animals that can\'t locate them using sonar. Nets and fishing lines may also scrape and break coral and block out sunlight needed by organisms below.',
+            'Des plastiques fragmentés, des cannettes enfouies dans le sable, des filets enchevêtrés dans les gorgones. Ce n\'est pas une catastrophe abstraite : c\'est ce que l\'on voit à cinq mètres de profondeur, à quelques kilomètres des côtes.',
+            'En tant que plongeur, on devient malgré soi un témoin. Et témoigner, c\'est la première étape pour que les choses changent. Ce carnet de plongée, c\'est ma façon de partager ce que j\'ai vu.',
           ]}
         />
 
         <ScrollRevealText className="text-xl md:text-3xl lg:text-4xl text-foreground font-light italic">
-          Plastics, polystyrenes and other waste continue to decompose and release chemicals into the water.
+          Sous l'eau, rien ne disparaît vraiment. Tout se fragmente, se dilue, se propage.
         </ScrollRevealText>
 
         <ArticleSection
           gradientClass=""
           title=""
           paragraphs={[
-            'This waste, of course, is not just appearing in the ocean, it\'s being created by people on land.',
-            '"Education is an important piece of the puzzle," says Mikos, "as it\'s critical that people understand the role each and every one of us play when it comes to protecting the oceans."',
-            'Since 2021, Hyundai has supported the activities of Healthy Seas, which include not only significant ocean cleanups but also running educational programmes and community engagement to future-proof the ocean.',
+            'Ce qui me frappe le plus, c\'est que les déchets ne tombent pas du ciel. Ils viennent de nous — de nos habitudes, de notre consommation, de notre négligence. L\'océan ne pollue pas l\'océan.',
+            'La plongée m\'a appris l\'humilité face à la nature. Elle m\'a aussi donné une conviction : si on peut descendre voir la beauté de ces fonds, on peut aussi descendre voir les dégâts — et en parler franchement.',
+            'Ce carnet n\'a pas la prétention de changer le monde. Mais si une personne, après l\'avoir lu, regarde l\'océan différemment, c\'est déjà quelque chose.',
           ]}
         />
       </div>
@@ -110,11 +124,11 @@ const Index = () => {
 
         <ArticleSection
           gradientClass=""
-          title="Making use of ghost gear"
-          subtitle="Once Healthy Seas has fished waste out of the sea, there remains the question of what to do with it."
+          title="Agir à son échelle"
+          subtitle="Entre deux plongées, j'ai commencé à m'interroger sur ce que je pouvais faire concrètement. La réponse n'est pas forcément spectaculaire."
           paragraphs={[
-            'Aquafil, a textiles company specialising in regenerated nylon, was one of Healthy Sea\'s founding partners in 2013. Aquafil has been a pioneer of the circular economy for textiles by leading in the use of regenerated nylon, a fibre that can be recycled indefinitely.',
-            'Ghost gear, in short, is returned to life. Hyundai invests in removing waste from the ocean, some of which is processed by Aquafil. The material is then made into usable mats that fit snugly into some of Hyundai\'s cars.',
+            'Ramasser un déchet en remontant. Signaler un filet abandonné. Participer à des plongées de nettoyage organisées par des clubs ou des associations. Ce sont des gestes simples, mais qui comptent quand ils sont multipliés.',
+            'Des initiatives comme Healthy Seas montrent qu\'il est possible d\'aller plus loin : transformer les filets récupérés en matière première, fermer la boucle entre la pollution et la création. C\'est le genre de démarche qui donne envie de s\'impliquer davantage.',
           ]}
         />
 
@@ -122,20 +136,20 @@ const Index = () => {
           gradientClass=""
           quotes={[
             {
-              text: "We've changed the manufacturing process from a linear to a circular one.",
-              author: "Maria Giovanna Sandrini",
-              title: "chief communications officer, Aquafil",
+              text: "La mer m'a tout appris : la patience, l'observation, le respect. Elle m'a aussi appris que rien n'est acquis.",
+              author: "Enzo Schneider",
+              title: "plongeur niveau 2 FFESSM",
             },
           ]}
         />
 
         <ArticleSection
           gradientClass=""
-          title="Education as a solution"
-          subtitle="While cleaning up the oceans and reducing waste is important, prevention is better than cure."
+          title="Pourquoi ce carnet"
+          subtitle="Ce projet est né d'une envie simple : partager ce que la plongée m'apporte, et ce qu'elle m'oblige à voir."
           paragraphs={[
-            'A significant part of the work done by Healthy Seas and Hyundai is to educate both young and old across the 20 countries in which the foundations work, including those in the Baltics and around the Red Sea.',
-            'Healthy Seas prioritises showing rather than telling as part of their educational programme. The programmes focus on children aged 6-18, taking place along coastlines or online.',
+            'Chaque spot a son histoire. Ses couleurs, ses habitants, ses odeurs même — oui, sous l\'eau on perçoit des choses que les photos ne retransmettent pas. Ce carnet est une tentative de mettre des mots et des images sur des expériences qui méritent d\'être partagées.',
+            'Mais c\'est aussi un espace pour parler honnêtement de l\'état de nos fonds marins. Pas pour culpabiliser, mais pour sensibiliser. Parce que ce qu\'on ne connaît pas, on ne le protège pas.',
           ]}
         />
 
@@ -143,9 +157,9 @@ const Index = () => {
           gradientClass=""
           quotes={[
             {
-              text: "And everything, after its lifetime, should become a material for something else. It comes full circle.",
-              author: "Diana Kloster",
-              title: "head of CMF, Hyundai Korea",
+              text: "Protéger l'océan, ce n'est pas renoncer à le fréquenter. C'est apprendre à y être avec respect.",
+              author: "Enzo Schneider",
+              title: "plongeur niveau 2 FFESSM",
             },
           ]}
         />
@@ -178,20 +192,20 @@ const Index = () => {
 
         <div className="relative z-10 py-32 md:py-48 px-6 text-center">
           <h2 className="font-display text-3xl md:text-5xl text-foreground mb-4 font-semibold">
-            Hyundai & Healthy Seas
+            Fin de cette plongée, mais pas de l'aventure
           </h2>
           <p className="font-body text-foreground/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-4">
-            Hyundai announced its partnership with Healthy Seas in 2021 as a way of fostering a more sustainable future.
+           merci d'avoir exploré les profondeurs avec moi à travers ce carnet de plongée digital. J'espère que vous avez apprécié découvrir les différentes plongées, les espèces fascinantes que j'ai rencontrées et les anecdotes qui les accompagnent. N'hésitez pas à revenir régulièrement pour voir mes nouvelles aventures sous-marines et partager vos propres expériences de plongée !
           </p>
           <p className="font-body text-foreground/60 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            With Hyundai's commitment to developing emission-free mobility solutions, and Healthy Seas' expertise in protecting marine ecosystems, the two organisations hold a shared vision for shaping sustainable communities.
+            Enzo SCHNEIDER
           </p>
         </div>
 
-        {/* Bottom — Hyundai foreground + footer coral par-dessus */}
+        {/* Bottom — foreground + footer coral par-dessus */}
         <div className="relative z-20">
           <img
-            src="/images/Hyundai-Footer-foreground_1.webp"
+            src="/images/Footer-foreground_1.webp"
             alt=""
             className="w-full object-cover object-top"
           />

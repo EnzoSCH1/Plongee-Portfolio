@@ -65,7 +65,7 @@ const DecorationLayer = ({ variant }: DecorationLayerProps) => {
     return (
       <>
         {/* fillet droit haut */}
-        <img src="/images/fillet.webp" alt="" className="absolute right-0 top-[8%] w-[440px] md:w-[760px] opacity-70 pointer-events-none float-fillet" />
+        <img src="/images/fillet.webp" alt="" className="absolute right-0 top-[18%] w-[440px] md:w-[760px] opacity-70 pointer-events-none float-fillet" />
         {/* fillet_1 gauche — aligné avec la citation "It smelled toxic" */}
         <img src="/images/fillet 1.webp" alt="" className="absolute left-0 top-[62%] w-[440px] md:w-[700px] opacity-70 pointer-events-none float-fillet-delayed" />
 
@@ -296,10 +296,10 @@ const DecorationLayer = ({ variant }: DecorationLayerProps) => {
         className="absolute right-[12%] top-[-11%] w-[240px] md:w-[320px] pointer-events-none z-[3] select-none"
         style={{ filter: 'brightness(0.35)' }}
       />
-      <FloatingImage src="/images/school01-2.webp" className="left-[8%] top-[20%]" width={100} parallaxSpeed={0.15} floatDuration={11} floatDelay={1} />
-      <FloatingImage src="/images/fish-2.webp" className="right-[10%] top-[40%]" width={35} parallaxSpeed={0.25} floatDuration={8} floatDelay={3} rotate={5} />
-      <FloatingImage src="/images/left-fish-1.webp" className="left-[15%] top-[60%]" width={45} parallaxSpeed={0.3} floatDuration={7} floatDelay={2} rotate={-8} />
-      <FloatingImage src="/images/school-1-left.webp" className="right-[3%] top-[70%]" width={80} parallaxSpeed={0.2} floatDuration={12} />
+      <FloatingImage src="/images/school01-2.webp" className="left-[8%] top-[20%] opacity-25" width={100} parallaxSpeed={0.15} floatDuration={11} floatDelay={1} />
+      <FloatingImage src="/images/fish-2.webp" className="right-[10%] top-[40%] opacity-25" width={35} parallaxSpeed={0.25} floatDuration={8} floatDelay={3} rotate={5} />
+      <FloatingImage src="/images/left-fish-1.webp" className="left-[15%] top-[60%] opacity-25" width={45} parallaxSpeed={0.3} floatDuration={7} floatDelay={2} rotate={-8} />
+      <FloatingImage src="/images/school-1-left.webp" className="right-[3%] top-[70%] opacity-25" width={80} parallaxSpeed={0.2} floatDuration={12} />
     </>
   );
 };

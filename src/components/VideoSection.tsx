@@ -38,10 +38,15 @@ const VideoSection = () => {
           className="absolute inset-0 flex flex-col items-center justify-center z-10 px-6"
         >
           <h2 className="font-display text-3xl md:text-5xl text-foreground text-center mb-4 font-semibold">
-            Hyundai & Healthy Seas
+            Fin de cette plongée, mais pas de l'aventure
           </h2>
           <p className="font-body text-foreground/70 text-base md:text-lg text-center max-w-2xl leading-relaxed">
-            Hyundai announced its partnership with Healthy Seas in 2021 as a way of fostering a more sustainable future. With Hyundai's commitment to developing emission-free mobility solutions, and Healthy Seas' expertise in protecting marine ecosystems, the two organisations hold a shared vision for shaping sustainable communities.
+           merci d'avoir exploré les profondeurs avec moi à travers ce carnet de plongée digital. J'espère que vous avez apprécié découvrir les différentes plongées, les espèces fascinantes que j'ai rencontrées et les anecdotes qui les accompagnent. N'hésitez pas à revenir régulièrement pour voir mes nouvelles aventures sous-marines et partager vos propres expériences de plongée !
+           <br />
+           <br />
+           à bientôt pour de nouvelles explorations sous-marines !
+           <br />
+           Enzo SCHNEIDER
           </p>
         </motion.div>
 
