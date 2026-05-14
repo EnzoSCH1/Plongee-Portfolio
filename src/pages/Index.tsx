@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import HeroSection from '@/components/HeroSection';
 import QuoteSection from '@/components/QuoteSection';
 import ArticleSection from '@/components/ArticleSection';
@@ -7,6 +8,7 @@ import ScrollRevealText from '@/components/ScrollRevealText';
 import LightRays from '@/components/LightRays';
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative ocean-base-gradient">
       {/* Foreground overlay - BBC style top layer */}
@@ -25,7 +27,7 @@ const Index = () => {
           className="w-full max-w-100xl object-contain block rounded-sm"
           style={{ maxHeight: '625px' }}
         >
-          <source src="/videos/video_fond_marin.webm" type="video/webm" />
+          <source src="/videos/presentationenzoschneider.MP4" type="video/mp4" />
         </video>
       </div>
 
@@ -35,22 +37,66 @@ const Index = () => {
         <Bubbles />
 
         <ScrollRevealText className="text-xl md:text-3xl lg:text-4xl text-foreground/90 italic">
-          Chaque plongée est un rappel : l'océan est vivant, fragile, et il a besoin de nous.
+         👌 Êtes-vous prêt à plonger dans l'aventure avec moi ?
         </ScrollRevealText>
 
         <div className="max-w-3xl mx-auto px-6 py-8">
           <h3 className="font-display text-lg md:text-xl text-foreground/80 italic text-center leading-relaxed">
-            Plongeur niveau 2 FFESSM, j'ai eu la chance d'explorer des fonds marins d'une beauté rare. Mais à chaque descente, le constat est là : les déchets ont envahi même les endroits les plus reculés de l'océan.
+            Plongeur niveau 2 FFESSM, j'ai eu la chance d'explorer des fonds marins d'une beauté rare. A chaque descente, le constat est là : ébloui par cette nature que peu ont la chance de voir.
           </h3>
+        </div>
+
+        <ScrollRevealText className="text-2xl md:text-4xl lg:text-5xl text-foreground font-light italic leading-tight">
+          "En Méditerranée, mon berceau, là où j'ai côtoyé mes premiers poissons et découvert des merveilles sous-marines si près de nous."
+        </ScrollRevealText>
+
+        {/* Bouton galerie Méditerranée */}
+        <div className="flex flex-col items-center pb-8 -mt-16">
+          {/* Limace de mer posée sur le bouton */}
+          <img
+            src="/images/limace_de_mer.webp"
+            alt="Limace de mer"
+            className="w-5 md:w-8 object-contain mb-[-8px] relative z-10 pointer-events-none translate-x-20 opacity-60"
+          />
+          <button
+            onClick={() => navigate('/galerie-mediterranee')}
+            className="font-body text-sm tracking-widest uppercase px-8 py-3 border border-foreground/30 text-foreground/70 hover:border-foreground/70 hover:text-foreground transition-colors rounded-sm"
+          >
+            Voir la galerie Méditerranée
+          </button>
         </div>
 
         <QuoteSection
           gradientClass=""
           quotes={[
-            { text: "Sous l'eau, le silence est total. Puis tu aperçois un filet qui dérive, lentement, comme un fantôme." },
-            { text: "Il n'attrape plus rien d'utile, mais il emprisonne tout ce qui passe." },
-            { text: "Des poissons, des tortues, des méduses — pris au piège d'un filet que personne ne récupèrera jamais." },
-            { text: "C'est là que j'ai compris pourquoi il fallait en parler. Pas seulement le vivre, mais le montrer." },
+            { text: "C'est à ce moment-là que tu comprends pourquoi les plongeurs sont accros." },
+            { text: "De la Méditerranée à la Mer Rouge, chaque mer a sa propre personnalité — mais toutes méritent le même respect." },
+          ]}
+        />
+
+        <ScrollRevealText className="text-2xl md:text-4xl lg:text-5xl text-foreground font-light italic leading-tight">
+          "En Mer Rouge, la biodiversité est à couper le souffle. Chaque plongeée est une explosion de couleurs et de vie."
+        </ScrollRevealText>
+
+        {/* Bouton galerie Mer Rouge */}
+        <div className="flex flex-col items-center pb-8 -mt-16">
+          {/* Limace de mer posée sur le bouton */}
+          <img
+            src="/images/limace_de_mer1.webp"
+            alt="Limace de mer"
+            className="w-5 md:w-8 object-contain mb-[-9px] relative z-10 pointer-events-none -translate-x-16 opacity-60"
+          />
+          <button
+            onClick={() => navigate('/galerie-mer-rouge')}
+            className="font-body text-sm tracking-widest uppercase px-8 py-3 border border-foreground/30 text-foreground/70 hover:border-foreground/70 hover:text-foreground transition-colors rounded-sm"
+          >
+            Voir la galerie Mer Rouge
+          </button>
+        </div>
+
+        <QuoteSection
+          gradientClass=""
+          quotes={[
             {
               text: "La mer ne peut pas parler. C'est à nous de le faire à sa place.",
               author: "Enzo Schneider",
@@ -70,7 +116,7 @@ const Index = () => {
           title="Ce que l'on voit sous l'eau"
           subtitle="Quand on plonge régulièrement, on finit par développer un regard différent. On voit l'eau non plus comme un décor, mais comme un milieu vivant, complexe, et menacé."
           paragraphs={[
-            'Lors de mes plongées, j\'ai pu observer des récifs coralliens d\'une grande diversité — mais aussi des zones entières où les filets abandonnés étouffent la vie. Ces engins fantômes dérivent en silence, invisibles depuis la surface, dévastateurs en dessous.',
+            'Lors de mes plongées, j\'ai pu observer des récifs coralliens d\'une grande diversité — mais aussi des zones entières où les déchets abandonnés étouffent la vie. Ces poisons fantômes dérivent en silence, invisibles depuis la surface, dévastateurs en dessous.',
             'Passer son niveau 2 FFESSM, c\'est apprendre à évoluer en autonomie, à gérer sa flottabilité, à observer sans perturber. C\'est aussi réaliser que chaque plongeur a une responsabilité : celle de témoigner de ce qu\'il voit, et d\'agir.',
           ]}
         />
@@ -215,6 +261,12 @@ const Index = () => {
             className="absolute bottom-0 left-0 w-full object-cover object-bottom pointer-events-none"
             style={{ filter: 'brightness(0.08)' }}
           />
+          {/* 5 poissons sombres au-dessus du corail */}
+          <img src="/images/fish-1.webp" alt="" className="absolute pointer-events-none select-none" style={{ bottom: '18%', left: '8%', width: '70px', filter: 'brightness(0.09)', transform: 'scaleX(-1) rotate(-25deg)', zIndex: 30 }} />
+          <img src="/images/fish-4.webp" alt="" className="absolute pointer-events-none select-none" style={{ bottom: '22%', left: '22%', width: '55px', filter: 'brightness(0.09)', transform: 'scaleX(-1) rotate(8deg)', zIndex: 30 }} />
+          <img src="/images/fish-2.webp" alt="" className="absolute pointer-events-none select-none" style={{ bottom: '15%', left: '45%', width: '65px', filter: 'brightness(0.09)', transform: 'scaleX(-1) rotate(-14deg)', zIndex: 30 }} />
+          <img src="/images/fish-3.webp" alt="" className="absolute pointer-events-none select-none" style={{ bottom: '20%', right: '22%', width: '50px', filter: 'brightness(0.09)', transform: 'scaleX(1) rotate(-6deg)', zIndex: 30 }} />
+          <img src="/images/fish-4.webp" alt="" className="absolute pointer-events-none select-none" style={{ bottom: '16%', right: '7%', width: '60px', filter: 'brightness(0.09)', transform: 'scaleX(1) rotate(-23deg)', zIndex: 30 }} />
         </div>
       </div>
     </div>

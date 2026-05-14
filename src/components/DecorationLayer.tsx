@@ -70,9 +70,9 @@ const DecorationLayer = ({ variant }: DecorationLayerProps) => {
         <img src="/images/fillet 1.webp" alt="" className="absolute left-0 top-[62%] w-[440px] md:w-[700px] opacity-70 pointer-events-none float-fillet-delayed" />
 
         {/* LEFT side — left-fish-* */}
-        <FloatingImage src="/images/left-fish-3.webp" className="left-[2%] top-[15%]" width={70} parallaxSpeed={0.3} floatDuration={8} floatDelay={1} rotate={4} />
+        <FloatingImage src="/images/left-fish-3_1.webp" className="left-[6%] top-[15%] opacity-65" width={70} parallaxSpeed={0.3} floatDuration={8} floatDelay={1} rotate={4} />
         <FloatingImage src="/images/left-fish-1.webp" className="left-[4%] top-[38%]" width={70} parallaxSpeed={0.2} floatDuration={11} floatDelay={3} rotate={6} />
-        <FloatingImage src="/images/left-fish-3.webp" className="left-[3%] top-[62%]" width={65} parallaxSpeed={0.25} floatDuration={9} floatDelay={2} rotate={-6} />
+        <FloatingImage src="/images/left-fish-3_1.webp" className="left-[3%] top-[62%] opacity-45" width={65} parallaxSpeed={0.25} floatDuration={9} floatDelay={2} rotate={-6} />
         <FloatingImage src="/images/left-fish-1.webp" className="left-[5%] top-[82%]" width={70} parallaxSpeed={0.35} floatDuration={8} floatDelay={5} rotate={3} />
 
         {/* poissons — droite */}
@@ -81,10 +81,31 @@ const DecorationLayer = ({ variant }: DecorationLayerProps) => {
         {/* RIGHT side — fish-* */}
         <FloatingImage src="/images/fish-1.webp" className="right-[6%] top-[18%]" width={80} parallaxSpeed={0.2} floatDuration={10} floatDelay={2} rotate={3} />
         <FloatingImage src="/images/fish-2.webp" className="right-[10%] top-[38%]" width={70} parallaxSpeed={0.2} floatDuration={9} floatDelay={1} rotate={-8} />
-        <FloatingImage src="/images/fish-3.webp" className="right-[8%] top-[62%] z-[3]" width={60} parallaxSpeed={0.3} floatDuration={7} floatDelay={4} rotate={-6} />
-        <FloatingImage src="/images/fish-3.webp" className="right-[8%] top-[65%] z-[3]" width={50} parallaxSpeed={0.3} floatDuration={7} floatDelay={4} rotate={-6} />
-        <FloatingImage src="/images/fish-2.webp" className="right-[12%] top-[75%]" width={55} parallaxSpeed={0.25} floatDuration={8} floatDelay={3} rotate={5} />
+        <FloatingImage src="/images/left-fish-3_1.webp" className="right-[8%] top-[62%] opacity-45 z-[3]" width={60} parallaxSpeed={0.3} floatDuration={7} floatDelay={4} rotate={-6} flipX/>
+        <FloatingImage src="/images/left-fish-3_1.webp" className="right-[8%] top-[65%] opacity-45 z-[3]" width={50} parallaxSpeed={0.3} floatDuration={7} floatDelay={4} rotate={-6} flipX />
+        <FloatingImage src="/images/fish-2.webp" className="right-[12%] top-[75%] opacity-65" width={55} parallaxSpeed={0.25} floatDuration={8} floatDelay={3} rotate={5} />
         <FloatingImage src="/images/fish-4.webp" className="right-[7%] top-[88%]" width={45} parallaxSpeed={0.15} floatDuration={10} floatDelay={2} rotate={8} />
+
+        {/* Corail gauche — aligné avec la citation "En Méditerranée, mon berceau" */}
+        <img
+          src="/images/decor-diver-coral.webp"
+          alt=""
+          className="absolute left-0 top-[10%] w-[100px] md:w-[150px] pointer-events-none z-[2] brightness-51 opacity-85 rotate-180"
+          style={{ transform: 'translateX(-10%) rotate(180deg)' }}
+        />
+
+        {/* Reef-fish vertical — à droite de la citation "En Mer Rouge" */}
+        <img
+          src="/images/Reef-fish-2.webp"
+          alt=""
+          className="absolute right-0 pointer-events-none z-[2] brightness-50 opacity-70 origin-right"
+          style={{
+            top: '55%',
+            width: '940px',
+            transform: 'translateX(-10%) rotate(-90deg)',
+            transformOrigin: 'right center',
+          }}
+        />
       </>
     );
   }
@@ -263,6 +284,12 @@ const DecorationLayer = ({ variant }: DecorationLayerProps) => {
         />
       </motion.div>
 
+      {/* 3 poissons sombres près du corail gauche */}
+      <img src="/images/left-fish-2_1.webp" alt="" className="absolute pointer-events-none select-none z-[4]" style={{ top: '-9%', left: '6%', width: '55px', filter: 'brightness(0.05)', transform: 'scaleX(1) rotate(5deg)' }} />
+      <img src="/images/left-fish-4_1.webp" alt="" className="absolute pointer-events-none select-none z-[4]" style={{ top: '8%', left: '12%', width: '45px', filter: 'brightness(1.5)', transform: 'rotate(-8deg)' }} />
+      <img src="/images/left-fish-1.webp" alt="" className="absolute pointer-events-none select-none z-[4]" style={{ top: '20%', left: '6%', width: '79px', filter: 'brightness(2)', transform: 'scaleX(1) rotate(-5deg)' }} />
+      <img src="/images/fish-3.webp" alt="" className="absolute pointer-events-none select-none z-[4]" style={{ top: '32%', left: '10%', width: '35px', filter: 'brightness(0.29)', transform: 'scaleX(-1) rotate(10deg)' }} />
+
       {/* Zone illuminée — masque radial doux (ellipse) = couleurs naturelles, même parallax */}
       <motion.div
         className="absolute left-0 top-[-5%] h-[55%] pointer-events-none z-[3]"
@@ -296,10 +323,9 @@ const DecorationLayer = ({ variant }: DecorationLayerProps) => {
         className="absolute right-[12%] top-[-11%] w-[240px] md:w-[320px] pointer-events-none z-[3] select-none"
         style={{ filter: 'brightness(0.35)' }}
       />
-      <FloatingImage src="/images/school01-2.webp" className="left-[8%] top-[20%] opacity-25" width={100} parallaxSpeed={0.15} floatDuration={11} floatDelay={1} />
-      <FloatingImage src="/images/fish-2.webp" className="right-[10%] top-[40%] opacity-25" width={35} parallaxSpeed={0.25} floatDuration={8} floatDelay={3} rotate={5} />
-      <FloatingImage src="/images/left-fish-1.webp" className="left-[15%] top-[60%] opacity-25" width={45} parallaxSpeed={0.3} floatDuration={7} floatDelay={2} rotate={-8} />
-      <FloatingImage src="/images/school-1-left.webp" className="right-[3%] top-[70%] opacity-25" width={80} parallaxSpeed={0.2} floatDuration={12} />
+      <FloatingImage src="/images/fish-2.webp" className="right-[35%] top-[55%] opacity-25 brightness-0.08 z-[30]" width={35} parallaxSpeed={0.25} floatDuration={8} floatDelay={3} rotate={5} />
+      <FloatingImage src="/images/left-fish-1.webp" className="left-[15%] top-[60%] opacity-25 brightness-1 z-[30]" width={45} parallaxSpeed={0.3} floatDuration={7} floatDelay={2} rotate={-8} />
+      <FloatingImage src="/images/school-1-left.webp" className="right-[55%] top-[60%] opacity-25 brightness-1 z-[30]" width={80} parallaxSpeed={0.2} floatDuration={12} />
     </>
   );
 };

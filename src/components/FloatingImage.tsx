@@ -10,6 +10,7 @@ interface FloatingImageProps {
   floatDuration?: number;
   floatDelay?: number;
   rotate?: number;
+  flipX?: boolean;
 }
 
 const FloatingImage = ({
@@ -21,6 +22,7 @@ const FloatingImage = ({
   floatDuration = 8,
   floatDelay = 0,
   rotate = 0,
+  flipX = false,
 }: FloatingImageProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -42,6 +44,7 @@ const FloatingImage = ({
         alt={alt}
         width={width}
         className="select-none"
+        style={flipX ? { transform: 'scaleX(-1)' } : undefined}
         loading="lazy"
       />
     </motion.div>

@@ -84,9 +84,9 @@ const HeroSection = () => {
 
         {/* Poisson fond droite */}
         <motion.img
-          src="/images/left-fish-3.webp"
+          src="/images/left-fish-3_1.webp"
           alt="Poisson"
-          className="absolute right-[25%] top-[74%] w-[38px] md:w-[55px] float-fish"
+          className="absolute right-[25%] top-[74%] w-[38px] md:w-[55px] opacity-65 float-fish"
           style={{ '--fish-duration': '7s', '--fish-delay': '3s' } as any}
           loading="lazy"
         />
