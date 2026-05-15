@@ -71,6 +71,16 @@
   100% { opacity: 0.03; transform: translateX(-50%) rotate(var(--ray-angle)) scaleY(1); }
 }
 
+@keyframes lrhShimmer {
+  0%   { opacity: 0.33; }
+  100% { opacity: 0.03; }
+}
+
+@keyframes lrhRotate {
+  0%   { rotate: 0deg; }
+  100% { rotate: var(--rotate); }
+}
+
 .light-ray {
   position: absolute;
   top: -20%;
@@ -86,6 +96,43 @@
   animation: lightRay var(--ray-duration) ease-in-out infinite;
   animation-delay: var(--ray-delay);
   filter: blur(3px);
+}
+
+.lrh-wrap {
+  filter: blur(0.6rem);
+}
+
+.lrh-ray {
+  --degRange: 72.5deg;
+  --spreadRange: 40vw;
+  position: absolute;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  width: var(--thickness);
+  height: calc(20% + 370px + var(--length));
+  left: 50%;
+  transform:
+    translateX(calc(-50% + var(--deg) * var(--spreadRange) * -1 + 0.5 * var(--spreadRange)))
+    translateY(-100px)
+    rotateZ(calc(var(--degRange) * -0.5 + var(--deg) * var(--degRange)));
+  transform-origin: center -100px;
+  mix-blend-mode: screen;
+  animation:
+    lrhShimmer linear var(--duration) calc(var(--delay) * -1) infinite alternate forwards,
+    lrhRotate ease-in-out calc(var(--duration) * 3.14) calc(var(--delay) * -1) infinite alternate forwards;
+}
+
+.lrh-ray::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #A1D1FF, rgba(166, 255, 248, 0) 100%);
+  transform-origin: top center;
+  transform: rotateX(40deg);
 }
 
 /* Floating fish animation */

@@ -34,7 +34,7 @@ const HeroSection = () => {
         <div className="hero-video-gradient" />
 
 
-        <LightRays />
+        <LightRays hero />
 
         {/* Title */}
         <motion.div
