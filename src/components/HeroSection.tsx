@@ -1,25 +1,41 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import LightRays from './LightRays';
 
 const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const displacementRef = useRef<SVGFEDisplacementMapElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
   });
 
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-  const titleScale = useTransform(scrollYProgress, [0, 0.4], [1, 1.1]);
   const reefY = useTransform(scrollYProgress, [0, 0.6], [0, 40]);
   const fish1X = useTransform(scrollYProgress, [0, 1], [0, -60]);
   const fish2X = useTransform(scrollYProgress, [0, 1], [0, 50]);
   const schoolY = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
+  // scrollYProgress 0→1 = hero visible (section 200vh, viewport 100vh, sticky 100vh)
+  const filterScale = useTransform(scrollYProgress, [0, 0.2, 0.65, 1], [8, 55, 160, 300]);
+  const titleOpacity = useTransform(scrollYProgress, [0.05, 0.9], [1, 0]);
+
+  useMotionValueEvent(filterScale, 'change', (v) => {
+    if (displacementRef.current) {
+      displacementRef.current.setAttribute('scale', String(v));
+    }
+  });
+
+  useMotionValueEvent(titleOpacity, 'change', (v) => {
+    if (titleRef.current) {
+      titleRef.current.style.opacity = String(v);
+    }
+  });
+
   return (
-    <section ref={ref} className="relative h-[200vh]">
+    <section ref={ref} className="relative h-screen">
       {/* Video background */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      <div className="relative h-full w-full overflow-hidden">
 
         <video
           autoPlay
@@ -36,13 +52,44 @@ const HeroSection = () => {
 
         <LightRays hero />
 
+        {/* SVG liquid filter pour le titre */}
+        <svg style={{ display: 'none' }} aria-hidden="true">
+          <defs>
+            <filter id="liquid-text-filter" x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
+              <feTurbulence
+                type="turbulence"
+                baseFrequency="0.012 0.008"
+                numOctaves="4"
+                seed="5"
+                result="noise"
+              >
+                <animate
+                  attributeName="baseFrequency"
+                  dur="18s"
+                  values="0.012 0.008;0.018 0.010;0.010 0.006;0.016 0.012;0.012 0.008"
+                  repeatCount="indefinite"
+                />
+              </feTurbulence>
+              <feDisplacementMap
+                ref={displacementRef}
+                in="SourceGraphic"
+                in2="noise"
+                scale="8"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </defs>
+        </svg>
+
         {/* Title */}
-        <motion.div
-          style={{ opacity: titleOpacity, scale: titleScale }}
-          className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4"
-        >
-          <h1 className="wavy-text text-5xl md:text-7xl lg:text-8xl font-light text-foreground mb-4 tracking-widest">
-           Carnet de plongée
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4">
+          <h1
+            ref={titleRef}
+            className="text-5xl md:text-7xl lg:text-8xl text-foreground mb-4"
+            style={{ filter: 'url(#liquid-text-filter)', fontFamily: '"Comic Sans MS", "Comic Sans", cursive', letterSpacing: '0.05em' }}
+          >
+            Carnet de plongée
           </h1>
           <h2 className="font-display text-2xl md:text-4xl lg:text-5xl text-foreground font-light text-center max-w-3xl">
             Enzo SCHNEIDER
@@ -53,7 +100,7 @@ const HeroSection = () => {
           <p className="mt-6 text-foreground/50 text-xs tracking-widest uppercase animate-bounce">
             descendez pour explorer les profondeurs
           </p>
-        </motion.div>
+        </div>
 
         {/* Poisson milieu droit */}
         <motion.img
