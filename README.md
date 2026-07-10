@@ -43,7 +43,6 @@ Accède à l’application sur http://localhost:5173
 
 ## Crédits
 - Vidéos et images : libres de droits ou réalisées pour le projet
-- Inspiré par les expériences interactives de la BBC et Healthy Seas
 
 ## Auteur
 Enzo SCH – 2026
