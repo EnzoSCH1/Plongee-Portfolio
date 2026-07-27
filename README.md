@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/Divingbook.png" alt="DivingBook Banner" width="100%">
+</p>
+
 # Plongée Portfolio – Ocean Story Scroll
 
 Une expérience immersive de scroll inspirée par la BBC, mettant en avant la beauté et la fragilité des océans.
