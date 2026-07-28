@@ -2,55 +2,149 @@
   <img src="public/Divingbook.png" alt="DivingBook Banner" width="100%">
 </p>
 
-# Plongée Portfolio – Ocean Story Scroll
+<p align="center">
 
-Une expérience immersive de scroll inspirée par la BBC, mettant en avant la beauté et la fragilité des océans.
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black">
 
-## Aperçu
-Ce projet React + Vite propose une plongée interactive dans l’océan, avec transitions fluides, vidéos, overlays et animations pour sensibiliser à la pollution marine et à la préservation de l’environnement.
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
 
-- Vidéo de fond immersive (fond marin)
-- Transitions de couleurs
-- Overlays et gradients pour un effet de profondeur
-- Animations de bulles, poissons, raies, tortues…
-- Sections à thème (surface, profondeur, abysses)
-- Textes et citations pour la sensibilisation
+<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white">
 
-## Démarrage rapide
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+
+<img src="https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Open%20Source-Love-blueviolet?style=for-the-badge">
+
+</p>
+
+<h1 align="center">🌊 Book Plongée Portfolio – Ocean Story Scroll</h1>
+
+<p align="center">
+  <strong>An immersive underwater portfolio built with React, TypeScript and Vite.</strong>
+</p>
+
+<p align="center">
+  Explore the ocean through cinematic scrolling, marine life identification and underwater storytelling.
+</p>
+
+---
+
+#  About
+
+DivingBook is an immersive web experience inspired by modern editorial websites and interactive documentaries.
+
+The project combines cinematic scrolling, smooth animations and underwater storytelling to showcase diving adventures, marine biodiversity and ocean conservation.
+
+Everything is built with a modern React architecture and optimized for a fluid browsing experience.
+
+---
+
+# Features
+
+-  Cinematic scrolling experience
+-  Marine species encyclopedia
+-  Underwater photography gallery
+-  Dive spot explorer
+-  Personal diving logbook
+-  Immersive background videos
+-  Smooth animations
+-  Responsive design
+-  Fast loading with Vite
+
+---
+
+# Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| React | Frontend |
+| TypeScript | Main language |
+| Vite | Build tool |
+| CSS3 | Styling |
+| Tailwind CSS | Utility-first styling |
+| Framer Motion | Animations |
+| Radix UI | Accessible UI components |
+
+---
+
+# Installation
 
 ```bash
+git clone https://github.com/EnzoSCH1/Portfolio_DivingBook.git
+
+cd Portfolio_DivingBook
+
 npm install
+
 npm run dev
 ```
 
-Accède à l’application sur http://localhost:5173
+Open
 
-## Scripts utiles
-- `npm run dev` : lance le serveur de développement
-- `npm run build` : build de production
-- `npm run preview` : prévisualisation du build
-- `npm run test` : lance les tests
+```
+http://localhost:5173
+```
 
-## Structure du projet
-- `src/components/` : composants React (Hero, overlays, animations…)
-- `src/pages/Index.tsx` : page principale, structure du scroll
-- `src/index.css` : styles globaux, gradients, overlays
-- `public/videos/` : vidéos de fond
-- `public/images/` : illustrations et sprites
+---
 
-## Technologies
-- React 18 + TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion (animations)
-- Radix UI (UI accessible)
+# Project Structure
 
-## Crédits
-- Vidéos et images : libres de droits ou réalisées pour le projet
+```
+src
+├── components
+├── pages
+├── hooks
+├── assets
+├── styles
+└── lib
 
-## Auteur
-Enzo SCH – 2026
+public
+├── images
+├── videos
+└── icons
+```
 
+---
+
+# Roadmap
+
+- [x] Hero cinematic section
+- [x] Ocean storytelling
+- [x] Responsive layout
+- [x] Marine life pages
+- [ ] Interactive world dive map
+- [ ] Advanced search
+- [ ] Favorites system
+- [ ] Progressive Web App
+- [ ] Multi-language support
+
+---
+
+# GitHub Stats
+
+- **Language:** TypeScript (95.1%)
+- **CSS:** 3.9%
+- **Framework:** React
+- **Build Tool:** Vite
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+Feel free to open an Issue or submit a Pull Request.
+
+---
+
+<div align="center">
+
+Made with ❤️ by **Enzo SCH**
+
+*"Every dive has a story."*
+
+</div>
 ---
 
 > "La mer commence ici. Protégeons-la ensemble."
